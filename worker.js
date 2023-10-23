@@ -1,4 +1,4 @@
-const OPENAI_URL = env.process.rProxy || '填入反向代理地址';
+const OPENAI_URL = process.env.rProxy || '填入反向代理地址';
 
 const FCxP = (content) => {
     // 检查内容中是否包含"<card>"
