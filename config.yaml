@@ -72,9 +72,9 @@ mappers:
       - path: /you/api/(.+)
         rewrite: /api/$1
   # === you rproxy 代理 ===
-  - addr: https://you-rproxy-web.teralomaniac.eu.org
+  - addr: http://20.99.136.19
     routes:
-      - path: /you/api/(.+)
+      - path: /youip/api/(.+)
         rewrite: /api/$1
     action:
       - '{{req_setHeader "host" "you.com"}}
