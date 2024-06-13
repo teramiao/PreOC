@@ -81,11 +81,11 @@ mappers:
          {{req_setHeader "origin" "https://you.com"}}
          {{req_setHeader "referer" "https://you.com"}}'
   - addr: http://20.83.80.92
-      routes:
-        - path: /you2/api/(.+)
-          rewrite: /api/$1
-      action:
-        - '{{req_setHeader "host" "you.com"}}
-           {{req_setHeader "origin" "https://you.com"}}
-           {{req_setHeader "referer" "https://you.com"}}'
+    routes:
+      - path: /you2/api/(.+)
+        rewrite: /api/$1
+    action:
+      - '{{req_setHeader "host" "you.com"}}
+         {{req_setHeader "origin" "https://you.com"}}
+         {{req_setHeader "referer" "https://you.com"}}'
 
