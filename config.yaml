@@ -69,7 +69,16 @@ mappers:
   - addr: http://20.99.136.19
     ja3: true
     routes:
-      - path: /you/api/(.+)
+      - path: /you1/api/(.+)
+        rewrite: /api/$1
+    action:
+      - '{{req_setHeader "host" "beta.you.com"}}
+         {{req_setHeader "origin" "https://beta.you.com"}}
+         {{req_setHeader "referer" "https://beta.you.com"}}'
+  - addr: http://20.83.80.92
+    ja3: true
+    routes:
+      - path: /you2/api/(.+)
         rewrite: /api/$1
     action:
       - '{{req_setHeader "host" "beta.you.com"}}
