@@ -72,7 +72,7 @@ mappers:
       - path: /you/api/(.+)
         rewrite: /api/$1
   # === you rproxy 代理 ===
-  - addr: http://20.99.136.19
+  - addr: http://20.83.80.92
     routes:
       - path: /youip/api/(.+)
         rewrite: /api/$1
