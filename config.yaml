@@ -66,8 +66,12 @@ mappers:
       - path: /claude/api/(.+)
         rewrite: /api/$1
   # === you 代理 ===
-  - addr: https://beta.you.com
+  - addr: http://20.99.136.19
     ja3: true
     routes:
       - path: /you/api/(.+)
         rewrite: /api/$1
+    action:
+      - '{{req_setHeader "host" "beta.you.com"}}
+         {{req_setHeader "origin" "https://beta.you.com"}}
+         {{req_setHeader "referer" "https://beta.you.com"}}'
